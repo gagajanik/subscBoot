@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="incomingCallsReport" pageWidth="450" pageHeight="792" columnWidth="410" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9dbf1086-ea36-4770-a591-4e8a846175f0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.detect.cell.type" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.cell.background" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.white.page.background" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows" value="true"/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.wrap.text" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+	<parameter name="p_phone" class="java.lang.String"/>
+	<parameter name="p_curDate" class="java.lang.String"/>
+	<field name="cgno" class="java.lang.String"/>
+	<field name="dateOfCall" class="java.lang.String"/>
+	<field name="timeOfCall" class="java.lang.String"/>
+	<field name="durationOfCall" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="400" height="20" uuid="a3bc5e24-4b28-41d2-88a2-993e2c9c979b"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[ადგილობრივი ზარები]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="34" width="124" height="20" uuid="86177eba-0c36-4319-b579-edccaab347e6"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[ვისთან დაირეკა:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="34" width="276" height="20" uuid="ac5540c6-1e01-4309-8a8f-ae5ea36d9b02"/>
+				<textFieldExpression><![CDATA[$P{p_phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="54" width="124" height="20" uuid="94b529f8-6ddb-4a54-bdbb-cbd81dda58c2"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[დაიბეჭდა:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="54" width="276" height="20" uuid="68071921-2534-42c1-b7ee-4be993476c24"/>
+				<textFieldExpression><![CDATA[$P{p_curDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="88" width="100" height="20" uuid="cac5243c-5978-4be4-8c9a-fea205e93247"/>
+				<text><![CDATA[cgno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="88" width="100" height="20" uuid="d81143c9-466a-4e93-96de-3cfa43a14bc6"/>
+				<text><![CDATA[dateOfCall]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="88" width="100" height="20" uuid="c575a835-8a37-4340-b5f1-170627ac8004"/>
+				<text><![CDATA[timeOfCall]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="88" width="100" height="20" uuid="98dd5905-e209-4390-ad6d-5c2998ae6b69"/>
+				<text><![CDATA[durationOfCall]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="a33a292b-5ca7-4a3a-8b1e-5766dc832fe9"/>
+				<textFieldExpression><![CDATA[$F{cgno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="4b378f5c-05f3-4047-8bbd-16a35e1c3520"/>
+				<textFieldExpression><![CDATA[$F{dateOfCall}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="20199022-090c-4ce0-bb38-679b6a21c46a"/>
+				<textFieldExpression><![CDATA[$F{timeOfCall}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="543973bf-769a-4b14-89d7-d5648b4c2321"/>
+				<textFieldExpression><![CDATA[$F{durationOfCall}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

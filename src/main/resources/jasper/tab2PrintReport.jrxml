@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tab2PrintReport" pageWidth="742" pageHeight="792" columnWidth="702" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df3438da-1cdb-49f7-8f0d-e6eb83d4ab56">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="p_curDate" class="java.lang.String"/>
+	<field name="cgno" class="java.lang.String"/>
+	<field name="meter" class="java.lang.Double"/>
+	<field name="location" class="java.lang.String"/>
+	<field name="dateOfCall" class="java.lang.String"/>
+	<field name="timeOfCall" class="java.lang.String"/>
+	<field name="countryDescr" class="java.lang.String"/>
+	<field name="amount" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="61" width="100" height="20" uuid="54bb4b04-2535-401b-b45e-3feabe8d1e23"/>
+				<text><![CDATA[cgno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="61" width="100" height="20" uuid="7a5d7481-921d-4acc-bed4-ea6ec1c5a5e1"/>
+				<text><![CDATA[meter]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="61" width="100" height="20" uuid="31b53ef4-abae-473c-ac9f-e83d18f8490e"/>
+				<text><![CDATA[location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="61" width="100" height="20" uuid="c4750961-8e97-41a4-9022-708aa1e80fc2"/>
+				<text><![CDATA[dateOfCall]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="61" width="100" height="20" uuid="a460954b-d3af-457d-88fe-d62c397736a8"/>
+				<text><![CDATA[timeOfCall]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="61" width="100" height="20" uuid="69e7a556-4970-4f39-b199-e687af883a9a"/>
+				<text><![CDATA[countryDescr]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="61" width="100" height="20" uuid="a3807bf2-82ab-429d-b6eb-0c7a94bdd6c0"/>
+				<text><![CDATA[amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="0" width="184" height="20" uuid="0c1182b7-8a75-4d71-8a67-58cb516d959b"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[ზარები საქართველოს გარეთ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="73" height="20" uuid="d722e467-31b6-49b9-8d1c-25b489cd0d73"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[დაიბეჭდა:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="30" width="227" height="20" uuid="f2302144-065f-4ff1-9a76-7deaa222b8fd"/>
+				<textFieldExpression><![CDATA[$P{p_curDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="a10879e7-8c36-428d-9bb4-d98092876af6"/>
+				<textFieldExpression><![CDATA[$F{cgno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="ec5883c0-9dea-4b22-8845-a71d2b305861"/>
+				<textFieldExpression><![CDATA[$F{meter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="c615959e-1737-42d4-86f5-b51701612578"/>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="02f0afa2-8f18-4303-bdc7-051ff7822560"/>
+				<textFieldExpression><![CDATA[$F{dateOfCall}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="21f47471-d422-402e-8342-13a8c5b87b77"/>
+				<textFieldExpression><![CDATA[$F{timeOfCall}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="100" height="20" uuid="f7dd2919-2bda-4d71-a3ab-d7a94d2c9ae6"/>
+				<textFieldExpression><![CDATA[$F{countryDescr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="0" width="100" height="20" uuid="455bd164-d0fa-409c-b891-74e5c76341da"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

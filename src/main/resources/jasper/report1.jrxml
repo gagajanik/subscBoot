@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="31fcb2ac-0d8c-41dc-8cf8-6e90bef2a197">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/gaga/Documents/subscrdetails/src/main/resources/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_startDate" class="java.lang.String"/>
+	<parameter name="p_endDate" class="java.lang.String"/>
+	<parameter name="p_curDate" class="java.lang.String"/>
+	<field name="listOne" class="java.util.List"/>
+	<field name="listTwo" class="java.util.List"/>
+	<field name="valebi" class="java.util.List"/>
+	<field name="abonenti" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="240" height="20" uuid="d62c684e-4b65-4989-bb61-509e9908dcb7"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{abonenti}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="125" height="20" uuid="8e099e2f-f3e1-4570-9068-8b9ac4012209"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[საანგარიშო პერსოდი:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="20" width="100" height="20" uuid="172e5f8a-03c7-4b7e-a539-aa30807f69a2"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[-დან]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="125" y="20" width="100" height="20" uuid="2fad02d1-58af-4da0-b8e3-673b04cf5ace"/>
+				<textFieldExpression><![CDATA[$P{p_startDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="20" width="100" height="20" uuid="8920cff8-582d-45e9-a408-7630695c74ab"/>
+				<textFieldExpression><![CDATA[$P{p_endDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="425" y="20" width="100" height="20" uuid="2e6e88a5-a888-45f0-877f-d7ade24f5e3f"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[-მდე]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="20" uuid="2bb0e732-8d4c-4a5e-a8b0-25353c467e6f"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[ბეჭდვის თარიღი:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="40" width="425" height="20" uuid="28568ca9-d3e8-4516-9c5e-56dda5ff1323"/>
+				<textFieldExpression><![CDATA[$P{p_curDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<elementGroup/>
+			<elementGroup>
+				<elementGroup/>
+			</elementGroup>
+			<subreport>
+				<reportElement x="0" y="25" width="572" height="28" uuid="9374a71c-8e57-45e1-9ec9-be8c58107e67"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listOne})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report1_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="252" y="2" width="320" height="23" uuid="601b4ea6-c4a5-4af7-8c37-c082bde87a38"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{valebi})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report1_subreport3.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="29">
+			<subreport>
+				<reportElement x="0" y="3" width="572" height="26" uuid="c99ac253-ff2a-41b6-835f-9c57624d728d"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listTwo})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report1_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
